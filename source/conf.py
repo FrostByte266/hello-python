@@ -17,7 +17,10 @@ release = '0.1'
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../..'))
+if 'CI' in os.environ: # We are running inside a github workflow
+   sys.path.insert(0, os.environ["GITHUB_WORKSPACE"])
+else:
+    sys.path.insert(0, os.path.abspath('../..'))
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.napoleon', 'sphinx.ext.githubpages']
 
