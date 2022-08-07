@@ -1,4 +1,8 @@
 name: Pages
+
+env:
+  BUILDDIR: './docs'
+
 on:
  push:
    branches:
