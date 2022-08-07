@@ -16,6 +16,7 @@ jobs:
      uses: sphinx-notes/pages@v2
      with:
       documentation_path: './source'
+      requirements-path: './source/additional_requirements.txt'
    - name: Push changes
      uses: ad-m/github-push-action@master
      with:
